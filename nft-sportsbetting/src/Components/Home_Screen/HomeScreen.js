@@ -14,8 +14,21 @@ export const HomeScreen = () => {
             <TradingZone>
                 <TradingCard />
                 <TradingCard />
+                <TradingCard />
             </TradingZone>
             <GameCardBox>
+                <GameCard />
+                <GameCard />
+                <GameCard />
+                <GameCard />
+                <GameCard />
+                <GameCard />
+                <GameCard />
+                <GameCard />
+                <GameCard />
+                <GameCard />
+                <GameCard />
+                <GameCard />
                 <GameCard />
                 <GameCard />
                 <GameCard />
@@ -35,6 +48,8 @@ const GameCardBox = styled.div `
     display: flex;
     flex-direction: row;
     width: 70%;
+    flex-wrap: wrap;
+    height: 100%;
 `
 
 const TradingZone = styled.div `
