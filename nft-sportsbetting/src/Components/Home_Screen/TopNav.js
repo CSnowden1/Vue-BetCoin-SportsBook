@@ -5,14 +5,26 @@ import styled from 'styled-components';
 
 
 
+
+export const TopNav = () => {
+    return (
+        <Box>
+            <Menu>Menu</Menu>
+            <Inbox>Messages</Inbox>
+            <LoginBtn> Login</LoginBtn>
+        </Box>
+    )
+}
+
+
 const Box = styled.div `
     display:flex;
-    width: 100%;
     height: auto;
     border:solid red;
     margin-top: 3rem;
     flex-direction: row;
     align-items: center;
+    padding: .25rem 1rem;
 `;
 
 const LoginBtn = styled.button `
@@ -28,32 +40,27 @@ const LoginBtn = styled.button `
 
 `;
 
-const navBtn = styled.div `
-    display: flex;
+const Menu = styled.div `
     width: 3rem;
     height: 3rem;
-    border: solid white;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex: 3;
+
+
+`;
+
+const Inbox = styled.div `
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 2rem;
+
 
 `;
 
 
-const menuToggle = styled.div `
-    display: flex;
-    width: 3rem;
-    height: 3rem;
-    border: solid white;
-    margin: 2rem;
 
-`
-
-
-
-export const TopNav = () => {
-    return (
-        <Box>
-            <menuToggle> Menu </menuToggle>
-            <navBtn> Inbox </navBtn>
-            <LoginBtn> Login </LoginBtn>
-        </Box>
-    )
-}
