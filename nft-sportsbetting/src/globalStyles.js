@@ -3,8 +3,8 @@ import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
   body {
-    width: 100%
     display: flex;
+    width: 100vw;
     margin: 0;
     padding: 0;
     background: #1E1E1E;

@@ -1,6 +1,7 @@
 import React from "react";
 import { ReactComponentElement } from "react";
 import styled from 'styled-components';
+import { FaAlignJustify, FaInbox, FaUser} from 'react-icons/fa';
 
 
 
@@ -9,33 +10,35 @@ import styled from 'styled-components';
 export const TopNav = () => {
     return (
         <Box>
-            <Menu>Menu</Menu>
-            <Inbox>Messages</Inbox>
-            <LoginBtn> Login</LoginBtn>
+            <Menu><FaAlignJustify /></Menu>
+            <NavItem>Games</NavItem>
+            <NavItem>Picks</NavItem>
+            <NavItem>Trade Marketplace</NavItem>
+            <UserInfo>
+                <NavItem><FaInbox/></NavItem>
+                <LoginBtn><FaUser/></LoginBtn>
+            </UserInfo>
         </Box>
     )
 }
 
 
 const Box = styled.div `
-    display:flex;
+    display: flex;
     height: auto;
     border:solid red;
     margin-top: 3rem;
     flex-direction: row;
     align-items: center;
+    justify-content: space-between;
     padding: .25rem 1rem;
 `;
 
-const LoginBtn = styled.button `
-    text-align: center;
-    background: #427AA1;
+const LoginBtn = styled.div `
+    display: flex;
+    align-content: center;
+    justify-items: center;
     color: white;
-    width: 7rem;
-    padding: auto;
-    height: 3rem;
-    background: #427AA1;
-    border-radius: 3px;
     align-items: flex-end;
 
 `;
@@ -46,21 +49,22 @@ const Menu = styled.div `
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    flex: 3;
 
 
 `;
 
-const Inbox = styled.div `
-    width: 3rem;
-    height: 3rem;
+const NavItem = styled.div `
+    width: auto;
+    height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-right: 2rem;
-
-
 `;
 
+const UserInfo = styled.div `
+    display: flex;
+    justify-content: flex-end;
 
+`
 
