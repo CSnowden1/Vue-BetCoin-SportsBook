@@ -1,210 +1,69 @@
 import React from "react";
-import { ReactComponentElement } from "react";
-import styled, { keyframes } from "styled-components";
-
-
-
+import styled from "styled-components";
+import { Box, Divider, Typography } from "@material-ui/core";
 
 
 export const TickerItem = () => {
-    return (
-        <>
-            <Box>
-                <LeagueBox />
-                <GameBox>
-                    <HomeTeam>
-                        <TeamInfo>
-                            <Logo>
-
-                            </Logo>
-                            <TeamAbv>
-
-                            </TeamAbv>
-                        </TeamInfo>
-                        <Score>
-
-                        </Score>
-                    </HomeTeam>
-                    <AwayTeam>
-                        <TeamInfo>
-                            <Logo>
-
-                            </Logo>
-                            <TeamAbv>
-                            </TeamAbv>
-                        </TeamInfo>
-                        <Score>
-
-                        </Score>
-                    </AwayTeam>
-                </GameBox>
-                <Divider> | </Divider>
-                <GameBox>
-                    <HomeTeam>
-                        <TeamInfo>
-                            <Logo>
-
-                            </Logo>
-                            <TeamAbv>
-
-                            </TeamAbv>
-                        </TeamInfo>
-                        <Score>
-
-                        </Score>
-                    </HomeTeam>
-                    <AwayTeam>
-                        <TeamInfo>
-                            <Logo>
-
-                            </Logo>
-                            <TeamAbv>
-                            </TeamAbv>
-                        </TeamInfo>
-                        <Score>
-
-                        </Score>
-                    </AwayTeam>
-                </GameBox>
-                <Divider> | </Divider>
-                <GameBox>
-                    <HomeTeam>
-                        <TeamInfo>
-                            <Logo>
-
-                            </Logo>
-                            <TeamAbv>
-
-                            </TeamAbv>
-                        </TeamInfo>
-                        <Score>
-
-                        </Score>
-                    </HomeTeam>
-                    <AwayTeam>
-                        <TeamInfo>
-                            <Logo>
-
-                            </Logo>
-                            <TeamAbv>
-                            </TeamAbv>
-                        </TeamInfo>
-                        <Score>
-
-                        </Score>
-                    </AwayTeam>
-                </GameBox>
-                <Divider> | </Divider>
+  return (
+    <Box display="flex" alignItems="center" justifyContent="space-between">
+      <Box display="flex" alignItems="center" mr={2}>
+        <Typography variant="h5" color="primary">
+          Soccer
+        </Typography>
+      </Box>
+      <Box display="flex" alignItems="center" justifyContent="center">
+        <GameBox>
+          <Box display="flex" alignItems="center">
+            <Box mr={1}>
+              <Logo />
             </Box>
-        </>
-    )
-}
+            <Box>
+              <Typography variant="h6">Team A</Typography>
+              <Typography variant="subtitle1">TMA</Typography>
+            </Box>
+          </Box>
+          <Typography variant="h4" color="primary">
+            2
+          </Typography>
+        </GameBox>
+        <Divider orientation="vertical" flexItem />
+        <GameBox>
+          <Box display="flex" alignItems="center">
+            <Box mr={1}>
+              <Logo />
+            </Box>
+            <Box>
+              <Typography variant="h6">Team B</Typography>
+              <Typography variant="subtitle1">TMB</Typography>
+            </Box>
+          </Box>
+          <Typography variant="h4" color="primary">
+            1
+          </Typography>
+        </GameBox>
+      </Box>
+    </Box>
+  );
+};
 
-
-const scroll = keyframes`
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
+const GameBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 10rem;
+  margin: 1rem;
+  padding: 1rem;
+  background-color: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
 `;
 
-const Box = styled.div `
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        width: auto;
-        height: auto;
-        margin-right: 2rem;
-        animation: ${scroll} 20s linear infinite;
+const Logo = styled.div`
+  width: 3rem;
+  height: 3rem;
+  background-color: #bdbdbd;
+  border-radius: 50%;
 `;
 
-const LeagueBox =  styled.div`
-    width: 5rem;
-    height: 5rem;
-    background: gold;
-    border-radius: 1rem;
-    margin: 1rem;
-`
-
-const GameBox = styled.div `
-    border: solid gold;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 7rem;
-    margin: 1rem;
-    padding: 1rem 0;
-
-`
-
-const HomeTeam = styled.div `
-        display: flex;
-        flex-direction: row;
-        align-content: center;
-        justify-items: center;
-        box-sizing: border-box;
-        border: solid white;
-        height: 2rem;
-        width: 4rem;
-`
-
-
-const AwayTeam = styled.div `
-        display: flex;
-        flex-direction: row;
-        align-content: center;
-        justify-items: center;
-        box-sizing: border-box;
-        border: solid white;
-        height: 2rem;
-        width: 4rem;
-
-
-`
-
-const Divider = styled.div `
-    font-size: 3rem;
-    color: white;
-    display: flex;
-    align-content: center;
-    justify-items: center;
-`
-
-
-const TeamInfo = styled.div `
-        display: flex;
-        flex-direction: row;
-        align-content: center;
-        justify-items: flex-start;
-`
-
-const Score = styled.div `
-        display: flex;
-        flex-direction: row;
-        align-content: center;
-        justify-items: flex-end;
-`
-
-
-const Logo = styled.div `
-        display: flex;
-        flex-direction: row;
-        align-content: center;
-        justify-items: center;
-`
-const TeamAbv = styled.div `
-        display: flex;
-        flex-direction: row;
-        align-content: center;
-        justify-items: center;
-`
-
-export default TickerItem
-
-
-/* Rectangle 75 */
-
-
+export default TickerItem;

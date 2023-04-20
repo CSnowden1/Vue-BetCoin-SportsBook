@@ -1,70 +1,54 @@
 import React from "react";
-import { ReactComponentElement } from "react";
-import styled from 'styled-components';
-import { FaAlignJustify, FaInbox, FaUser} from 'react-icons/fa';
+import { FaAlignJustify, FaInbox, FaUser } from "react-icons/fa";
+import { AppBar, Toolbar, IconButton, Typography, Button } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
 
-
-
-
+const useStyles = makeStyles((theme) => ({
+  appBar: {
+    backgroundColor: "#fff",
+    color: "#333",
+  },
+  menuButton: {
+    marginRight: theme.spacing(2),
+  },
+  title: {
+    flexGrow: 1,
+  },
+  navLink: {
+    marginLeft: theme.spacing(3),
+    marginRight: theme.spacing(3),
+  },
+  loginBtn: {
+    display: "flex",
+    alignItems: "center",
+    color: "#333",
+  },
+}));
 
 export const TopNav = () => {
-    return (
-        <Box>
-            <Menu><FaAlignJustify /></Menu>
-            <NavItem>Games</NavItem>
-            <NavItem>Picks</NavItem>
-            <NavItem>Trade Marketplace</NavItem>
-            <UserInfo>
-                <NavItem><FaInbox/></NavItem>
-                <LoginBtn><FaUser/></LoginBtn>
-            </UserInfo>
-        </Box>
-    )
-}
+  const classes = useStyles();
 
-
-const Box = styled.div `
-    display: flex;
-    height: auto;
-    border:solid red;
-    margin-top: 3rem;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    padding: .25rem 1rem;
-`;
-
-const LoginBtn = styled.div `
-    display: flex;
-    align-content: center;
-    justify-items: center;
-    color: white;
-    align-items: flex-end;
-
-`;
-
-const Menu = styled.div `
-    width: 3rem;
-    height: 3rem;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-
-
-`;
-
-const NavItem = styled.div `
-    width: auto;
-    height: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: 2rem;
-`;
-
-const UserInfo = styled.div `
-    display: flex;
-    justify-content: flex-end;
-
-`
-
+  return (
+    <AppBar position="static" className={classes.appBar}>
+      <Toolbar>
+        <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
+          <FaAlignJustify />
+        </IconButton>
+        <Typography variant="h6" className={classes.title}>
+          Your App Name
+        </Typography>
+        <Button className={classes.navLink}>Games</Button>
+        <Button className={classes.navLink}>Picks</Button>
+        <Button className={classes.navLink}>Trade Marketplace</Button>
+        <div className={classes.loginBtn}>
+          <IconButton aria-label="inbox" color="inherit">
+            <FaInbox />
+          </IconButton>
+          <Button color="inherit" startIcon={<FaUser />}>
+            Login
+          </Button>
+        </div>
+      </Toolbar>
+    </AppBar>
+  );
+};

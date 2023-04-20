@@ -1,64 +1,35 @@
 import React from "react";
-import { ReactComponentElement } from "react";
+import { Grid } from "@material-ui/core";
 import { GameCard } from "./GameCard";
 import { TradingCard } from "./TradingCard";
-import {SideMenu} from "./sideMenu"
-import styled from 'styled-components';
-
-
-
-
+import { SideMenu } from "./sideMenu";
 
 export const HomeScreen = () => {
-    return (
-        <HomeScreenBox>
-            <TradingZone>
-                <TradingCard />
-                <TradingCard />
-                <TradingCard />
-            </TradingZone>
-            <GameCardBox>
-                <GameCard />
-                <GameCard />
-                <GameCard />
-                <GameCard />
-                <GameCard />
-                <GameCard />
-                <GameCard />
-                <GameCard />
-                <GameCard />
-                <GameCard />
-                <GameCard />
-                <GameCard />
-                <GameCard />
-                <GameCard />
-                <GameCard />
-            </GameCardBox>
-            <SideMenu />
-        </HomeScreenBox>
-    )
-}
+  return (
+    <Grid container spacing={2}>
+      <Grid item xs={12} sm={6} md={3}>
+        <TradingCard />
+      </Grid>
+      <Grid item xs={12} sm={6} md={3}>
+        <TradingCard />
+      </Grid>
+      <Grid item xs={12} sm={6} md={3}>
+        <TradingCard />
+      </Grid>
+      <Grid item xs={12} sm={6} md={3}>
+        <SideMenu />
+      </Grid>
+      <Grid item xs={12}>
+        <Grid container spacing={2}>
+          {[...Array(15)].map((_, index) => (
+            <Grid item xs={12} sm={6} md={4} lg={3} key={index}>
+              <GameCard />
+            </Grid>
+          ))}
+        </Grid>
+      </Grid>
+    </Grid>
+  );
+};
 
-
-const HomeScreenBox = styled.div`
-    display: flex;
-    flex-direction: row-reverse;
-`
-
-const GameCardBox = styled.div `
-    display: flex;
-    flex-direction: row;
-    width: 50%;
-    flex-wrap: wrap;
-    height: 100%;
-    justify-items: center;
-    align-items: center;
-`
-
-const TradingZone = styled.div `
-    display: flex;
-    flex-direction: column;
-    width: 25%;
-    height: 300rem;
-    border: solid gold;
-`
+export default HomeScreen;

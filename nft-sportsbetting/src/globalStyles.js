@@ -1,5 +1,4 @@
-// globalStyles.js
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from '@material-ui/core/styles';
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -8,7 +7,7 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     background: #1E1E1E;
-    font-family: Open-Sans, Helvetica, Sans-Serif;
+    font-family: 'Open Sans', sans-serif;
     color: #FFFFFF;
   }
 `;

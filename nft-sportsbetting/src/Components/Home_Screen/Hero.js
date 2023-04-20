@@ -1,52 +1,50 @@
 import React from "react";
-import { ReactComponentElement } from "react";
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
+import { Box } from "@material-ui/core";
 
 
 
-
-
-export const Hero = () => {
-    return (
-   <>
-        <Box>
-            <Promo></Promo>
-            <Promo></Promo>
-            <Promo></Promo>
-            <Promo></Promo>
-            <Promo></Promo>
-        </Box>
-   </>
-    )
-}
-
-const scroll = keyframes`
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-`;
-
-const Box = styled.div`
-  width: auto;
+const Wrapper = styled(Box)`
   display: flex;
-  background: black;
+  background-color: black;
   justify-content: flex-start;
   align-items: center;
-  padding: 2rem;
   overflow: hidden;
+  padding: 2rem 0;
+`;
+
+const PromoWrapper = styled.div`
+  width: 45rem;
+  height: 20rem;
+  margin-right: 2rem;
 `;
 
 const Promo = styled.div`
-  border: #1e1e1e;
-  width: 45rem;
-  height: 20rem;
-  background: grey;
-  margin-right: 2rem;
-  animation: ${scroll} 20s linear infinite;
+  width: 100%;
+  height: 100%;
+  background-color: grey;
 `;
 
+export function Hero()  {
+  return (
+    <Wrapper>
+      <PromoWrapper>
+        <Promo />
+      </PromoWrapper>
+      <PromoWrapper>
+        <Promo />
+      </PromoWrapper>
+      <PromoWrapper>
+        <Promo />
+      </PromoWrapper>
+      <PromoWrapper>
+        <Promo />
+      </PromoWrapper>
+      <PromoWrapper>
+        <Promo />
+      </PromoWrapper>
+    </Wrapper>
+  );
+};
 
-  export default Hero
+export default Hero
