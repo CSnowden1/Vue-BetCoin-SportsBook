@@ -16,6 +16,7 @@
         <Ticker class="ticker" />
         <LeftPanel class="left-panel" />
         <BettingCardGrid class="bet-grid" />
+        <AuctionPanel class="auction-panel" />
     </div>
 </template>
 
@@ -46,12 +47,20 @@
     grid-row: 5;
     grid-column: 1;
     height: 40rem;
+    
 }
-
 .bet-grid {
     grid-row: 5;
     grid-column: 2 / span 2;
 }
+
+.auction-panel {
+    grid-row: 5;
+    grid-column: 4;
+    height: 40rem;
+
+}
+
 
 </style>
 
