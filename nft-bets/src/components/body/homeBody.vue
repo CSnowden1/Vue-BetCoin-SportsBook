@@ -1,24 +1,62 @@
 <script setup>
-import Nav from '../Nav.vue'
-import SubNav from '../SubNav.vue'
-import Promotron from '../Promotron.vue'
-import Ticker from '../Ticker.vue'
-import LeftPanel from '../LeftPanel.vue'
-import BettingCardGrid from '../BettingCardGrid.vue'
-import AuctionPanel from '../AuctionPanel.vue'
-
+    import Nav from '../Nav.vue'
+    import SubNav from '../SubNav.vue'
+    import Promotron from '../Promotron.vue'
+    import Ticker from '../Ticker.vue'
+    import LeftPanel from '../LeftPanel.vue'
+    import BettingCardGrid from '../BettingCardGrid.vue'
+    import AuctionPanel from '../AuctionPanel.vue'
 </script>
 
 <template>
-      <Nav />
-      <SubNav />
-      <Promotron />
-      <Ticker />
-      <LeftPanel />
-      <BettingCardGrid />
-      <AuctionPanel />
+    <div class="grid cols-4 rows-5">
+        <Nav class="nav" />
+        <SubNav class="sub-nav" />
+        <Promotron class="promos" />
+        <Ticker class="ticker" />
+        <LeftPanel class="left-panel" />
+        <BettingCardGrid class="bet-grid" />
+    </div>
 </template>
 
+
 <style scoped>
-/* add any necessary styling */
+.nav {
+    grid-row: 1;
+    grid-column: 1 / span 4;
+  }
+
+.sub-nav {
+    grid-row: 2;
+    grid-column: 1 / span 4;
+}
+
+.promos {
+    grid-row: 3;
+    grid-column: 1 / span 4;
+}
+
+
+.ticker {
+    grid-row: 4;
+    grid-column: 1 / span 4;
+}
+
+.left-panel {
+    grid-row: 5;
+    grid-column: 1;
+    height: 40rem;
+}
+
+.bet-grid {
+    grid-row: 5;
+    grid-column: 2 / span 2;
+}
+
 </style>
+
+
+
+
+
+

@@ -1,6 +1,6 @@
 <template>
-    <nav class="bg-black flex justify-center items-center h-16" style="width: 20%;">
-      <div class="flex flex-col justify-center items-center gap-6">
+    <nav >
+      <div class=" h-full flex flex-col justify-around justify-items-stretch py-5 px-4">
         <button class="px-4 py-2 rounded-lg text-white bg-gray-800 hover:bg-gray-700 shadow-md">
           NFL
         </button>

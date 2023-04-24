@@ -1,5 +1,5 @@
 <template>
-  <div class="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
+  <div >
     <div class="md:flex">
       <div class="md:flex-shrink-0">
         <img class="h-48 w-full object-cover md:w-48" :src="nft.imageUrl" alt="NFT Image">

@@ -3,7 +3,7 @@ import BettingCard from "./BettingCard.vue"
 </script>
 
 <template>
-<div class="grid grid-cols-1 grid-rows-auto gap-4" style="width: 50%">
+<div >
     <div class="bg-white shadow-lg p-4">
         <BettingCard
             team="New England Patriots"
