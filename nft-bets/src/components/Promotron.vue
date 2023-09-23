@@ -27,7 +27,7 @@
         marquee.scrollLeft -= 1;
       }
   
-      const marqueeTimer = setInterval(animateMarquee, speed);
+      let marqueeTimer = setInterval(animateMarquee, speed);
   
       marquee.onmouseenter = () => clearInterval(marqueeTimer);
       marquee.onmouseleave = () => marqueeTimer = setInterval(animateMarquee, speed);
