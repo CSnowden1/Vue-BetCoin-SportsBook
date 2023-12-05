@@ -22,6 +22,11 @@ app.get('/api/matches', (req, res) => {
   }
 });
 
+const mockData = generateMatches(10); // Adjust the number as needed
+
+console.log(JSON.stringify(mockData, null, 2));
+
+
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });
