@@ -32,9 +32,6 @@ const sportsData = {
             { name: 'Wizards', location: 'Washington', initials: 'WAS' }
         ],
         NFL: [
-            {
-                name: 'NFL',
-                teams: [
                   { name: 'Cardinals', location: 'Arizona', initials: 'ARI' },
                   { name: 'Falcons', location: 'Atlanta', initials: 'ATL' },
                   { name: 'Ravens', location: 'Baltimore', initials: 'BAL' },
@@ -67,8 +64,6 @@ const sportsData = {
                   { name: 'Buccaneers', location: 'Tampa Bay', initials: 'TB' },
                   { name: 'Titans', location: 'Tennessee', initials: 'TEN' },
                   { name: 'Commanders', location: 'Washington', initials: 'WAS' }
-                ]
-              }
             ],
         //... other sports league
 

@@ -16,20 +16,25 @@ function generateSpread(sport) {
 }
 
 function generateAmericanOdds(spread) {
-  const baseOdds = 100;
-  const oddsDifference = spread * 10;
-  let homeOdds = baseOdds + oddsDifference;
-  let awayOdds = baseOdds - oddsDifference;
-
-  homeOdds = Math.max(homeOdds, 100);
-  awayOdds = Math.max(awayOdds, 100);
-
-  if (faker.datatype.boolean()) {
-    return { home: `-${homeOdds}`, away: `+${awayOdds}` };
-  } else {
-    return { home: `+${awayOdds}`, away: `-${homeOdds}` };
+    const oddsVariation = faker.datatype.number({ min: 15, max: 30 });
+    const oddsDifference = spread * oddsVariation;
+  
+    const baseOdds = faker.datatype.number({ min: 130, max: 200 });
+  
+    let homeOdds = baseOdds + oddsDifference;
+    let awayOdds = baseOdds - oddsDifference;
+  
+    homeOdds = Math.max(homeOdds, 100);
+    awayOdds = Math.max(Math.abs(awayOdds), 100);
+  
+    if (faker.datatype.boolean()) {
+      return { home: `-${homeOdds}`, away: `+${awayOdds}` };
+    } else {
+      return { home: `+${awayOdds}`, away: `-${homeOdds}` };
+    }
   }
-}
+  
+  
 
 function generateBettingNumbers(sport) {
   const overUnderRanges = {
