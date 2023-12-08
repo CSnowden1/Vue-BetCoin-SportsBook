@@ -3,7 +3,6 @@
     import SubNav from '../SubNav.vue'
     import Promotron from '../Promotron.vue'
     import Ticker from '../Ticker.vue'
-    import LeftPanel from '../LeftPanel.vue'
     import BettingCardGrid from '../BettingCardGrid.vue'
     import AuctionPanel from '../AuctionPanel.vue'
 </script>
@@ -14,7 +13,6 @@
         <SubNav class="sub-nav" />
         <Promotron class="promos" />
         <Ticker class="ticker" />
-        <LeftPanel class="left-panel" />
         <BettingCardGrid class="bet-grid" />
         <AuctionPanel class="auction-panel" />
     </div>
@@ -51,7 +49,7 @@
 }
 .bet-grid {
     grid-row: 5;
-    grid-column: 2 / span 2;
+    grid-column: 1 / span 3;
 }
 
 .auction-panel {
