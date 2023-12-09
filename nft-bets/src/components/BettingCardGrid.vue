@@ -49,6 +49,7 @@ console.log()
           :homeMoneyLine="game.odds.home"
           :awayMoneyLine="game.odds.away"
           :total="game.betting.overUnder"
+          :time="game.date"
         />
       </div>
     </div>
